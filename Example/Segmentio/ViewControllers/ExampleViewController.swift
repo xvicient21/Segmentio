@@ -56,7 +56,7 @@ class ExampleViewController: UIViewController {
         
         segmentioView.selectedSegmentioIndex = selectedSegmentioIndex()
         
-        segmentioView.valueDidChange = { [weak self] _, segmentIndex in
+        segmentioView.valueDidChange = { [weak self] _, segmentIndex, _ in
             if let scrollViewWidth = self?.scrollView.frame.width {
                 let contentOffsetX = scrollViewWidth * CGFloat(segmentIndex)
                 self?.scrollView.setContentOffset(

@@ -9,7 +9,7 @@
 import UIKit
 import QuartzCore
 
-public typealias SegmentioSelectionCallback = ((_ segmentio: Segmentio, _ selectedSegmentioIndex: Int) -> Void)
+public typealias SegmentioSelectionCallback = ((_ segmentio: Segmentio, _ selectedSegmentioIndex: Int, _ previousSegmentioIndex: Int) -> Void)
 
 open class Segmentio: UIView {
     
@@ -39,7 +39,7 @@ open class Segmentio: UIView {
         didSet {
             if selectedSegmentioIndex != oldValue {
                 reloadSegmentio()
-                valueDidChange?(self, selectedSegmentioIndex)
+                valueDidChange?(self, selectedSegmentioIndex, oldValue)
             }
         }
     }
